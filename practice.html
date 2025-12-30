@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OATdle - Practice</title>
+    <link rel="stylesheet" href="/src/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-left">
+                <a href="/" class="header-button">Home</a>
+            </div>
+            <h1>OATdle Practice</h1>
+            <div class="header-right">
+            </div>
+        </header>
+        <main id="game-board">
+            <div id="question-container">
+                <div id="question-header">
+                    <span id="question-subject"></span>
+                    <span id="question-difficulty"></span>
+                </div>
+                <div id="question-stem"></div>
+            </div>
+            <div id="options-container">
+            </div>
+        </main>
+        <div id="feedback-container">
+            <div id="feedback-text"></div>
+            <div id="explanation-container">
+                <p id="explanation-text"></p>
+            </div>
+        </div>
+        <div id="practice-controls">
+            <button id="prev-question-button">Previous</button>
+            <button id="next-question-button">Next</button>
+        </div>
+    </div>
+    <script type="module" src="/src/practice.js"></script>
+</body>
+</html>

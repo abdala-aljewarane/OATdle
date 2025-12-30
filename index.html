@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OATdle</title>
+    <link rel="stylesheet" href="/src/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-left">
+                <button id="help-button" class="header-button">?</button>
+                <a href="/practice.html" class="header-button">Practice</a>
+            </div>
+            <h1>OATdle</h1>
+            <div class="header-right">
+                <button id="stats-button" class="header-button">📊</button>
+                <button id="settings-button" class="header-button">⚙️</button>
+            </div>
+        </header>
+        <main id="game-board">
+            <div id="question-container">
+                <div id="question-header">
+                    <span id="question-subject"></span>
+                    <span id="question-difficulty"></span>
+                </div>
+                <div id="question-stem"></div>
+            </div>
+            <div id="options-container">
+            </div>
+        </main>
+        <div id="feedback-container">
+            <div id="feedback-text"></div>
+            <div id="explanation-container">
+                <p id="explanation-text"></p>
+            </div>
+            <div id="countdown-container">
+                <p>Next OATdle in: <span id="countdown-timer"></span></p>
+            </div>
+        </div>
+
+        <div id="stats-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-button">&times;</span>
+                <h2>Statistics</h2>
+                <div id="stats-content">
+                    <div class="stat">
+                        <span class="stat-value" id="games-played">0</span>
+                        <span class="stat-label">Played</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-value" id="win-percentage">0</span>
+                        <span class="stat-label">Win %</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-value" id="current-streak">0</span>
+                        <span class="stat-label">Current Streak</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-value" id="max-streak">0</span>
+                        <span class="stat-label">Max Streak</span>
+                    </div>
+                </div>
+                <button id="share-button">Share</button>
+            </div>
+        </div>
+
+        <div id="settings-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-button">&times;</span>
+                <h2>Settings</h2>
+                <div id="settings-content">
+                    </div>
+            </div>
+        </div>
+
+        <div id="help-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-button">&times;</span>
+                <h2>How to Play</h2>
+                <p>Welcome to OATdle! Here's how to play:</p>
+                <ul>
+                    <li>A new OAT practice question is available each day.</li>
+                    <li>Read the question and select one of the four multiple-choice answers (A, B, C, or D).</li>
+                    <li>You can click the option with your mouse or use your keyboard (A, B, C, D keys).</li>
+                    <li>You only get one attempt per question!</li>
+                    <li>After you answer, the correct answer will be highlighted in green, and an incorrect selection will be shown in red.</li>
+                    <li>An explanation for the correct answer will appear below the question.</li>
+                    <li>Your statistics are tracked automatically. Click the 📊 icon to see your progress.</li>
+                    <li>A new question will be available at midnight.</li>
+                </ul>
+            </div>
+        </div>
+
+         <div id="admin-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-button" id="admin-close-button">&times;</span>
+                <h2>Admin Panel</h2>
+                <div id="admin-login">
+                    <input type="password" id="admin-password" placeholder="Enter password">
+                    <button id="admin-login-button">Login</button>
+                </div>
+                <div id="admin-dashboard" style="display: none;">
+                    <h3>Manage Questions</h3>
+                    <div id="question-list"></div>
+                    <div id="add-question-form">
+                        <h4>Add New Question</h4>
+                        <input type="text" id="new-question-subject" placeholder="Subject">
+                        <input type="text" id="new-question-difficulty" placeholder="Difficulty">
+                        <textarea id="new-question-stem" placeholder="Question Stem"></textarea>
+                        <input type="text" id="new-option-A" placeholder="Option A">
+                        <input type="text" id="new-option-B" placeholder="Option B">
+                        <input type="text" id="new-option-C" placeholder="Option C">
+                        <input type="text" id="new-option-D" placeholder="Option D">
+                        <input type="text" id="new-question-answer" placeholder="Correct Answer (A, B, C, or D)">
+                        <textarea id="new-question-explanation" placeholder="Explanation"></textarea>
+                        <button id="add-question-button">Add Question</button>
+                    </div>
+                    <h3>Set Daily Question</h3>
+                    <input type="number" id="daily-question-id" placeholder="Enter Question ID">
+                    <button id="set-daily-question-button">Set Daily Question</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="/src/script.js"></script>
+</body>
+</html>
