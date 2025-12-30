@@ -64,7 +64,6 @@ let isAdmin = false;
  * Initializes the application.
  */
 async function init() {
-    console.log("init() called");
     loadStats();
     loadGameState();
     const loadedQuestions = await fetchQuestions();
@@ -96,7 +95,6 @@ async function fetchQuestions() {
             throw new Error(`HTTP error! status: ${res.status}`);
         }
         const data = await res.json();
-        console.log("Fetched questions:", data);
         questions = data.questions;
         return questions;
     } catch (error) {
@@ -158,7 +156,6 @@ function loadGameState() {
  * @param {Object} question - The question object to display.
  */
 function displayQuestion(question) {
-    console.log("displayQuestion called with:", question);
     if (!question) {
         questionStem.textContent = "No question available for today.";
         return;
@@ -283,7 +280,6 @@ function startCountdown() {
 
 // --- Game Interactions ---
 optionsContainer.addEventListener('click', (event) => {
-    console.log('optionsContainer clicked', event, gameState.gameFinished);
     const selectedOption = event.target.closest('.option');
     if (selectedOption && !gameState.gameFinished) {
         handleAnswerSubmission(selectedOption.dataset.option);
