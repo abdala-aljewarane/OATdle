@@ -46,7 +46,7 @@ init();
  */
 async function fetchQuestions() {
     try {
-        const res = await fetch('./src/questions.json');
+        const res = await fetch('/src/questions.json');
         if (!res.ok) {
             throw new Error(`HTTP error! status: ${res.status}`);
         }
