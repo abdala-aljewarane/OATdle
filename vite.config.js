@@ -5,5 +5,13 @@ export default defineConfig({
     fs: {
       strict: false
     }
+  },
+  build: {
+    rollupOptions: {
+      input: {
+        main: 'index.html',
+        practice: 'practice.html'
+      }
+    }
   }
 })
