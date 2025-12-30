@@ -243,7 +243,7 @@ function updateStats(isCorrect) {
  * If a game was already played today, this function restores the visual state.
  */
 function restoreGameState() {
-    if (gameState.gameFinished) {
+    if (gameState.gameFinished && currentQuestion) {
         gameState.gameFinished = false;
         handleAnswerSubmission(gameState.lastPlayedAnswer);
     }
